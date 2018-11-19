@@ -1,62 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
+<head>
+    <meta charset="UTF-8">
 
-        <style>
-            table {
-                width: 100%;
-                height: 100%;
-            }
+    <style>
+        table {
+            width: 100%;
+            height: 100%;
+        }
 
-            .textAreaWrapper {
-                width: 100%;
-                height: 80vh;
-            }
+        .textAreaWrapper {
+            width: 100%;
+            height: 80vh;
+        }
 
-            textarea {
-                width: 80%;
-                height: 95%;
-            }
-        </style>
-    </head>
-    <body>
-        <table>
-            <tr>
-                <td>
-                    <div>
-                        <label>Enter code here</label>
-                    </div>
-                </td>
-                <td>
-                    <div>
-                        <label>Parsed code here</label>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="textAreaWrapper">
-                        <textarea id="codePlaceholder" title="Enter code here"></textarea>
-                    </div>
-                </td>
-                <td>
-                    <div class="textAreaWrapper">
-                        <textarea id="parsedCode" title="Parse code"></textarea>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <div>
-                        <button id="codeSubmissionButton">Parse code</button>
-                    </div>
-                </td>
-                <td>
-                </td>
-            </tr>
-        </table>
+        textarea {
+            width: 80%;
+            height: 95%;
+        }
+    </style>
+</head>
+<body>
+<table>
+    <tr>
+        <td>
+            <div>
+                <label>Enter code here</label>
+            </div>
+        </td>
+        <td>
+            <div>
+                <label>Parsed code here</label>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td style="width:30%">
+            <div class="textAreaWrapper">
+                <textarea id="codePlaceholder" title="Enter code here"></textarea>
+            </div>
+        </td>
+        <td style="width: 60%">
+            <div class="textAreaWrapper">
+                <!--<textarea id="parsedCode" title="Parse code"></textarea>-->
+                <table  id="myTable" style="float:right">
+                    <thead>
+                    <th align="left">Line</th>
+                    <th align="left">Type</th>
+                    <th align="left">Name</th>
+                    <th align="left">Condition</th>
+                    <th align="left">Value</th>
+                    </thead>
+                    <tbody>
 
-        <script src="dist/bundle.js"></script>
-    </body>
+                    </tbody>
+
+                </table>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div>
+                <button id="codeSubmissionButton">Parse code</button>
+            </div>
+        </td>
+        <td>
+        </td>
+    </tr>
+</table>
+
+<script src="dist/bundle.js"></script>
+</body>
 </html>
