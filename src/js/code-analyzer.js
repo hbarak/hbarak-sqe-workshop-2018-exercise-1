@@ -1,7 +1,9 @@
 import * as esprima from 'esprima';
 
 const parseCode = (codeToParse) => {
-    return esprima.parseScript(codeToParse, {loc:true}); 
+    return esprima.parseScript(codeToParse, {loc:true});
+    //return esprima.parseScript(codeToParse);
+
 };
 
 var iterateFunctionFromTypeByNodeAndTable={
@@ -99,7 +101,7 @@ var rowFromTypeByNode = {
     },
     'AssignmentExpression': function (node, type) {
         let line, name, condition, value;
-        name = node.left.name;
+        name = getVal(node.left);
         value = getVal(node.right);
         line = node.loc.start.line;
         return [line, type, name, condition, value];
@@ -178,6 +180,10 @@ var valFromTypeByNode = {
     'AssignmentExpression':function(node) {
         return getVal(node.left) + '=' + getVal(node.right);
     },
+    // 'VariableDeclaration':function(node){
+    //     let decleration = node.declarations[0];
+    //
+    // }
 
     // null:function(node){
     //     return '';
